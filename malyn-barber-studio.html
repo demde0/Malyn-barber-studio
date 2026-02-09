@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malyn Barber Studio | Executive Grooming in Nairobi</title>
+    <meta name="description" content="Premier executive barbershop in Nairobi. Expert cuts, grooming, and full body massage. Book your appointment today.">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Archivo:wght@300;400;500;600&display=swap');
+        
+        :root {
+            --gold: #D4AF37;
+            --dark: #0A0A0A;
+            --charcoal: #1A1A1A;
+            --gray: #666666;
+            --light-gray: #E5E5E5;
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Archivo', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.2rem 5%;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+        
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark);
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(212, 175, 55, 0.03) 2px,
+                rgba(212, 175, 55, 0.03) 4px
+            );
+            animation: scan 8s linear infinite;
+        }
+        
+        @keyframes scan {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(50px); }
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: var(--white);
+            z-index: 1;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+        
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+            line-height: 1.1;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero .tagline {
+            font-size: 1.3rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--gold);
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 2px;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        .cta-button:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 6rem 5%;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--light-gray);
+            padding: 2.5rem 2rem;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .service-card .price {
+            color: var(--gold);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        
+        /* Gallery */
+        #gallery {
+            background: #F8F8F8;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--charcoal), var(--dark));
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .gallery-item::before {
+            content: '📸';
+            font-size: 3rem;
+            opacity: 0.3;
+        }
+        
+        .gallery-item::after {
+            content: 'Before & After';
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            color: var(--white);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial {
+            background: var(--white);
+            padding: 2.5rem;
+            border-left: 3px solid var(--gold);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            line-height: 1.8;
+        }
+        
+        .testimonial .author {
+            font-weight: 600;
+            color: var(--gold);
+        }
+        
+        /* Location */
+        #location {
+            background: var(--charcoal);
+            color: var(--white);
+        }
+        
+        #location .section-title {
+            color: var(--white);
+        }
+        
+        #location .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .location-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .contact-details {
+            padding: 2rem;
+        }
+        
+        .contact-details h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--gold);
+        }
+        
+        .contact-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+        
+        .contact-item .icon {
+            font-size: 1.5rem;
+            color: var(--gold);
+        }
+        
+        .contact-item div {
+            flex: 1;
+        }
+        
+        .contact-item strong {
+            display: block;
+            margin-bottom: 0.3rem;
+            color: var(--gold);
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            background: #25D366;
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #20BA5A;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 5%;
+        }
+        
+        footer p {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+        }
+        
+        .whatsapp-float svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+        
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--dark);
+            transition: all 0.3s;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1rem;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .location-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            section {
+                padding: 4rem 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">MALYN</div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#location">Location</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="tagline">Executive Grooming</div>
+            <h1>Sharp Cuts.<br>Refined Style.</h1>
+            <p>Nairobi's premier destination for the modern gentleman who demands excellence in grooming and relaxation.</p>
+            <a href="#services" class="cta-button">View Services</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Premium grooming tailored to your lifestyle</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Kids Haircut</h3>
+                    <div class="price">KES 150</div>
+                    <p>Patient, professional cuts for young gentlemen. Making grooming fun and stress-free.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Haircut</h3>
+                    <div class="price">KES 200</div>
+                    <p>Precision cuts styled to perfection. From classic to contemporary, tailored to your preference.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Beard Trim</h3>
+                    <div class="price">KES 200</div>
+                    <p>Expert shaping and sculpting. Hot towel treatment included for the ultimate finish.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Full Grooming</h3>
+                    <div class="price">KES 500</div>
+                    <p>Complete package: haircut, beard trim, and facial grooming. Leave looking your absolute best.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>Executive Package</h3>
+                    <div class="price">KES 3,000</div>
+                    <p>The ultimate experience: full grooming plus professional full body massage. Luxury redefined.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Work</h2>
+            <p class="section-subtitle">Transformations that speak for themselves</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+                <div class="gallery-item"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">Trusted by Nairobi's finest</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"Best barbershop in Nairobi, hands down. The executive package is worth every shilling. I walk out feeling like a new man."</p>
+                    <div class="author">— James M.</div>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"Professional service, clean environment, and they really know their craft. Been coming here for two years now."</p>
+                    <div class="author">— David K.</div>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"The attention to detail is unmatched. From the cut to the massage, everything is executed perfectly."</p>
+                    <div class="author">— Peter N.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location">
+        <div class="container">
+            <h2 class="section-title">Visit Us</h2>
+            <p class="section-subtitle">Located in the heart of Nairobi</p>
+            
+            <div class="location-info">
+                <div class="contact-details">
+                    <h3>Get In Touch</h3>
+                    
+                    <div class="contact-item">
+                        <div class="icon">📍</div>
+                        <div>
+                            <strong>Location</strong>
+                            P2F6+85, Nairobi, Kenya
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="icon">⏰</div>
+                        <div>
+                            <strong>Hours</strong>
+                            Monday - Saturday: 8:00 AM - 8:00 PM<br>
+                            Sunday: 10:00 AM - 6:00 PM
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="icon">💬</div>
+                        <div>
+                            <strong>Book Appointment</strong>
+                            WhatsApp us for instant booking
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/254XXXXXXXXX?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20at%20Malyn%20Barber%20Studio" class="whatsapp-btn">
+                        <svg viewBox="0 0 32 32" width="24" height="24"><path fill="currentColor" d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-4.713 1.262 1.262-4.669-0.292-0.508c-1.207-2.100-1.847-4.507-1.847-6.987 0-7.51 6.11-13.621 13.621-13.621s13.621 6.11 13.621 13.621c0 7.51-6.11 13.621-13.621 13.621zM21.305 19.26c-0.346-0.174-2.049-1.007-2.366-1.123-0.316-0.117-0.547-0.174-0.776 0.174s-0.892 1.123-1.094 1.347c-0.201 0.223-0.402 0.251-0.748 0.076-0.346-0.174-1.461-0.539-2.785-1.722-1.031-0.922-1.727-2.061-1.929-2.407-0.201-0.346-0.022-0.533 0.152-0.707 0.156-0.155 0.346-0.402 0.518-0.603 0.174-0.201 0.231-0.346 0.346-0.571 0.117-0.223 0.058-0.427-0.028-0.603s-0.776-1.87-1.063-2.565c-0.28-0.672-0.56-0.58-0.776-0.591-0.201-0.008-0.428-0.010-0.656-0.010s-0.603 0.085-0.92 0.427c-0.316 0.346-1.206 1.179-1.206 2.873s1.235 3.333 1.406 3.561c0.174 0.223 2.425 3.732 5.872 5.234 0.821 0.354 1.462 0.566 1.962 0.724 0.825 0.262 1.577 0.225 2.168 0.137 0.662-0.099 2.049-0.835 2.335-1.642 0.288-0.808 0.288-1.501 0.201-1.642-0.086-0.14-0.316-0.223-0.662-0.396z"/></svg>
+                        Book via WhatsApp
+                    </a>
+                </div>
+                
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.767932057729!2d36.760378!3d-1.276528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTYnMzUuNSJTIDM2wrA0NSczNy40IkU!5e0!3m2!1sen!2ske!4v1234567890"
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; border-radius:4px;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Malyn Barber Studio. Executive grooming for the modern gentleman.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/254XXXXXXXXX?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20at%20Malyn%20Barber%20Studio" class="whatsapp-float" target="_blank">
+        <svg viewBox="0 0 32 32"><path fill="currentColor" d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-4.713 1.262 1.262-4.669-0.292-0.508c-1.207-2.100-1.847-4.507-1.847-6.987 0-7.51 6.11-13.621 13.621-13.621s13.621 6.11 13.621 13.621c0 7.51-6.11 13.621-13.621 13.621zM21.305 19.26c-0.346-0.174-2.049-1.007-2.366-1.123-0.316-0.117-0.547-0.174-0.776 0.174s-0.892 1.123-1.094 1.347c-0.201 0.223-0.402 0.251-0.748 0.076-0.346-0.174-1.461-0.539-2.785-1.722-1.031-0.922-1.727-2.061-1.929-2.407-0.201-0.346-0.022-0.533 0.152-0.707 0.156-0.155 0.346-0.402 0.518-0.603 0.174-0.201 0.231-0.346 0.346-0.571 0.117-0.223 0.058-0.427-0.028-0.603s-0.776-1.87-1.063-2.565c-0.28-0.672-0.56-0.58-0.776-0.591-0.201-0.008-0.428-0.010-0.656-0.010s-0.603 0.085-0.92 0.427c-0.316 0.346-1.206 1.179-1.206 2.873s1.235 3.333 1.406 3.561c0.174 0.223 2.425 3.732 5.872 5.234 0.821 0.354 1.462 0.566 1.962 0.724 0.825 0.262 1.577 0.225 2.168 0.137 0.662-0.099 2.049-0.835 2.335-1.642 0.288-0.808 0.288-1.501 0.201-1.642-0.086-0.14-0.316-0.223-0.662-0.396z"/></svg>
+    </a>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
